@@ -43,15 +43,11 @@ def yandex_taxi(from_where, where):
         
 
         #Находим поле ввода куда, очищаем его и отправляем туда наше местоположение
-        kuda = driver.find_element(By.XPATH,'//*[@id="application"]/div[1]/div[2]/div[1]/div[4]/div[2]/div[1]/div/div[1]/div/div[1]/div[1]/div[2]/span[1]/span[2]/textarea')
-        
-        kuda.send_keys(from_where)
-        driver.find_element(By.XPATH, '//*[@id="application"]/div[1]/div[2]/div[1]/div[4]/div[2]/div[1]/div/div[1]/div/div[1]/div[1]/div[2]/span[1]/span[1]').click()
-       
+        kuda = driver.find_element(By.XPATH,'//*[@id="application"]/div[1]/div[2]/div[1]/div[4]/div[2]/div[1]/div/div[1]/div/div[1]/div[2]/div[2]/span[1]/span[2]/textarea')
+                                            
         kuda.send_keys(from_where)
         time.sleep(2)
-        driver.find_element(By.XPATH,'//*[@id="xuniq-0-1"]').click()
-
+        driver.find_element(By.XPATH,'//*[@id="xuniq-0-27"]').click()
 
         time.sleep(999)
 
