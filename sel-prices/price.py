@@ -1,3 +1,4 @@
+import selenium
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
@@ -23,9 +24,15 @@ def send_addres(driver, adres, xpath_textarea, xpath_clean, xpath_select):
     otkuda.send_keys(adres)
     if xpath_clean != 0:
         driver.find_element(By.XPATH, xpath_clean).click()
-    otkuda.send_keys(adres)
+        otkuda.send_keys(adres)
     time.sleep(2)
-    driver.find_element(By.XPATH, xpath_select).click()
+    if xpath_select != 0:
+        driver.find_element(By.XPATH, xpath_select).click()
+
+def button_fix(driver):
+    button = driver.find_element(By.XPATH, '/html/body/div[3]/div[2]/div/div/div/div/div/div[2]/button')
+    if button is not None:
+        button.click()
 
 def yandex_taxi(from_where, where):
     url = "https://taxi.yandex.ru/"
@@ -38,9 +45,7 @@ def yandex_taxi(from_where, where):
         time.sleep(2)
         try:
             #Нажимаем кнопку с местоположением если есть
-            button = driver.find_element(By.XPATH, '/html/body/div[3]/div[2]/div/div/div/div/div/div[2]/button')
-            if button is not None:
-                button.click()
+            button_fix(driver)
         except:
             k = 0
 
@@ -52,11 +57,13 @@ def yandex_taxi(from_where, where):
         
         #заполняем поле куда
         kxp_tx = '//*[@id="application"]/div[1]/div[2]/div[1]/div[4]/div[2]/div[1]/div/div[1]/div/div[1]/div[2]/div[2]/span[1]/span[2]/textarea'
-        kxp_sl = '//*[@id="xuniq-0-27"]'
+
+
+        kxp_sl = "/html/body/div[3]/div/div[1]"
         send_addres(driver, from_where, kxp_tx, 0, kxp_sl)
 
+        time.sleep(111)
         
-
 
 
         time.sleep(999)
@@ -72,3 +79,4 @@ def main():
     yandex_taxi("Мира 112 Тольятти", "Аэрохлл Тольятти")
 
 main()
+
