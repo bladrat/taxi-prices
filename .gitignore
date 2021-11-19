@@ -13,7 +13,7 @@ logs
 
 # Игнорирование файлов специфичных для IDE 
 
-.vscode/ 
+.vscode/*
 
 settings.py
 
