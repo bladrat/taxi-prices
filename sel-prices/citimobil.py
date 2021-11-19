@@ -5,6 +5,8 @@ import ast
 
 
 def get_prices(otkuda, kuda):
+    #Формат подачи "улица Мира 45 Тольятти"
+    # улица [Название улицы] [Номер дома] [город]
     headers = {
         'authority': 'widget.city-mobil.ru',
         'sec-ch-ua': '"Chromium";v="94", "Yandex";v="21", ";Not A Brand";v="99"',
@@ -32,10 +34,10 @@ def get_prices(otkuda, kuda):
 def get_kord(address):
     geolocator = Nominatim(user_agent = 'my_request')
     otkuda_loc = geolocator.geocode(address)
- 
+    print(otkuda_loc)
     return otkuda_loc.latitude, otkuda_loc.longitude
  
 
 
-a = get_prices(get_kord('Голосова 83 Тольятти'), get_kord('Мира 101 Тольятти'))
+a = get_prices(get_kord('улица Мира 45 Тольятти'), get_kord('улица Мира 101 Тольятти'))
 print(a)
