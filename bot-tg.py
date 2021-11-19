@@ -3,9 +3,9 @@ from aiogram import Bot, Dispatcher, executor, types
 import requests
 from geopy.geocoders import Nominatim
 import json
-
-
 from requests.models import Response
+
+from settings import API_TOKEN, CLID, APIKEY
 
 def get_kord(address):
 
@@ -50,7 +50,7 @@ def get_prices_yandex(otkuda, kuda):
     otkuda = get_kord(otkuda)[::-1]
     kuda = get_kord(kuda)[::-1]
 
-    response = requests.get(f'https://taxi-routeinfo.taxi.yandex.net/taxi_info?rll={otkuda[0]},{otkuda[1]}~{kuda[0]},{kuda[1]}&clid=ak211029&apikey=uKjkuIZTANofMjJlnXGJqILlQxTbZgDmXVScpH').text
+    response = requests.get(f'https://taxi-routeinfo.taxi.yandex.net/taxi_info?rll={otkuda[0]},{otkuda[1]}~{kuda[0]},{kuda[1]}&clid={CLID}&apikey={APIKEY}').text
     response_dict = json.loads(response)
 
     return response_dict["options"][0]["price"]
@@ -60,7 +60,6 @@ def get_all_prices(otkuda, kuda):
     citymobil = "Ситимобил - " + str(get_prices_citymobil(otkuda, kuda)) + " руб."
     return yandex, citymobil
 
-API_TOKEN = "2145077899:AAEB0uwQ6d-z5gTS7iuVXh4ZNdy5V8PDsS0"
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
