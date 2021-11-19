@@ -4,7 +4,12 @@ from selenium.webdriver.common.by import By
 import time
 from fake_useragent import UserAgent
 
+"""
+В проекте этот файл не используется, но пусть лежит пока что
 
+
+
+"""
 def webdriver_options(proxy, path, headless):
     
     #Настраиваем вебдрайвер прописываем прокси, путь к драйверу и режим хеадлесс
