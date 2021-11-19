@@ -60,9 +60,6 @@ def get_all_prices(otkuda, kuda):
 
 
 
-print(get_prices_yandex('улица Мира 45 Тольятти', 'улица Мира 101 Тольятти'))
-print(get_prices_citymobil('улица Мира 45 Тольятти', 'улица Мира 101 Тольятти'))
-
 
 '''
 a = get_prices(get_kord('улица Мира 45 Тольятти'), get_kord('улица Мира 101 Тольятти'))
