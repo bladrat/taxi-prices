@@ -32,12 +32,17 @@ def get_prices(otkuda, kuda):
 
  
 def get_kord(address):
+
+    #Формат подачи "улица Мира 45 Тольятти"
+    # улица [Название улицы] [Номер дома] [город]
+    
     geolocator = Nominatim(user_agent = 'my_request')
     otkuda_loc = geolocator.geocode(address)
     print(otkuda_loc)
     return otkuda_loc.latitude, otkuda_loc.longitude
  
 
-
+'''
 a = get_prices(get_kord('улица Мира 45 Тольятти'), get_kord('улица Мира 101 Тольятти'))
 print(a)
+'''
