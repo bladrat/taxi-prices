@@ -1,7 +1,9 @@
+import logging
+from aiogram import Bot, Dispatcher, executor, types
 import requests
 from geopy.geocoders import Nominatim
 import json
-import ast
+
 
 from requests.models import Response
 
@@ -58,18 +60,40 @@ def get_all_prices(otkuda, kuda):
     citymobil = "Ситимобил - " + str(get_prices_citymobil(otkuda, kuda)) + " руб."
     return yandex, citymobil
 
-print(get_prices_yandex('улица Мира 45 Тольятти', 'улица Мира 101 Тольятти'))
-print(get_prices_citymobil('улица Мира 45 Тольятти', 'улица Мира 101 Тольятти'))
+API_TOKEN = "2145077899:AAEB0uwQ6d-z5gTS7iuVXh4ZNdy5V8PDsS0"
 
+# Configure logging
+logging.basicConfig(level=logging.INFO)
 
-'''
-a = get_prices(get_kord('улица Мира 45 Тольятти'), get_kord('улица Мира 101 Тольятти'))
-print(a)
-'''
-"""
-print(get_kord('улица Мира 45 Тольятти'))
-print(get_kord('улица Мира 101 Тольятти'))
-"""
-#https://taxi-routeinfo.taxi.yandex.net/taxi_info?rll=49.40642505,53.50692375~49.43793949030338,53.50981405&clid=ak211029&apikey=uKjkuIZTANofMjJlnXGJqILlQxTbZgDmXVScpH
+# Initialize bot and dispatcher
+bot = Bot(token=API_TOKEN)
+dp = Dispatcher(bot)
 
-#print(requests.get('https://taxi-routeinfo.taxi.yandex.net/taxi_info?rll=49.40642505,53.50692375~49.43793949030338,53.50981405&clid=ak211029&apikey=uKjkuIZTANofMjJlnXGJqILlQxTbZgDmXVScpH').text)
+@dp.message_handler(commands=['start', 'help'])
+async def send_welcome(message: types.Message):
+    """
+    This handler will be called when user sends `/start` or `/help` command
+    """
+    await message.reply("Привет, это бот для сравнения цен такси. Напиши место отправки в формате 'улица <название улицы> <номер дома> <город> и место куда нужно добраться через ';'. Должно выйти что-то такое 'улица Знаменка 12 Москва; улица Охотный Ряд 1 Москва'")
+    print("start/help")
+@dp.message_handler(content_types=['text'])
+async def get_text_messages(msg: types.Message):
+
+    print(msg.text)
+    if ";" in msg.text:
+        meessages = msg.text.split(';')
+
+        prices = get_all_prices(meessages[0], meessages[1])
+
+        await msg.answer(prices[0])
+        await msg.answer(prices[1])
+
+        
+        print(prices)
+    else:
+        await msg.answer("Вы написали адресса в неправильном формате, попробуйте снова.")
+        await msg.answer('Должно выйти что-то похожее на это "улица Знаменка 12 Москва; улица Охотный Ряд 1 Москва"')
+   
+
+if __name__ == '__main__':
+    executor.start_polling(dp, skip_updates=True)
