@@ -3,10 +3,24 @@ from geopy.geocoders import Nominatim
 import json
 import ast
 
+from requests.models import Response
 
-def get_prices(otkuda, kuda):
+def get_kord(address):
+
     #Формат подачи "улица Мира 45 Тольятти"
     # улица [Название улицы] [Номер дома] [город]
+    
+    geolocator = Nominatim(user_agent = 'my_request')
+    otkuda_loc = geolocator.geocode(address)
+    #print(otkuda_loc)
+
+    return otkuda_loc.latitude, otkuda_loc.longitude
+
+def get_prices_citymobil(otkuda, kuda):
+    #Формат подачи "улица Мира 45 Тольятти"
+    # улица [Название улицы] [Номер дома] [город]
+    otkuda = get_kord(otkuda)
+    kuda = get_kord(kuda)
     headers = {
         'authority': 'widget.city-mobil.ru',
         'sec-ch-ua': '"Chromium";v="94", "Yandex";v="21", ";Not A Brand";v="99"',
@@ -28,21 +42,29 @@ def get_prices(otkuda, kuda):
     response = requests.post('https://widget.city-mobil.ru/c-api', headers=headers, data=data).text
     response_dict = json.loads(response)
 
-    return response_dict["prices"][0]["price"], response_dict["prices"][1]["price"]
+    return response_dict["prices"][0]["price"]
 
- 
-def get_kord(address):
+def get_prices_yandex(otkuda, kuda):
+    otkuda = get_kord(otkuda)[::-1]
+    kuda = get_kord(kuda)[::-1]
 
-    #Формат подачи "улица Мира 45 Тольятти"
-    # улица [Название улицы] [Номер дома] [город]
-    
-    geolocator = Nominatim(user_agent = 'my_request')
-    otkuda_loc = geolocator.geocode(address)
-    print(otkuda_loc)
-    return otkuda_loc.latitude, otkuda_loc.longitude
- 
+    response = requests.get(f'https://taxi-routeinfo.taxi.yandex.net/taxi_info?rll={otkuda[0]},{otkuda[1]}~{kuda[0]},{kuda[1]}&clid=ak211029&apikey=uKjkuIZTANofMjJlnXGJqILlQxTbZgDmXVScpH').text
+    response_dict = json.loads(response)
+
+    return response_dict["options"][0]["price"]
+
+print(get_prices_yandex('улица Мира 45 Тольятти', 'улица Мира 101 Тольятти'))
+print(get_prices_citymobil('улица Мира 45 Тольятти', 'улица Мира 101 Тольятти'))
+
 
 '''
 a = get_prices(get_kord('улица Мира 45 Тольятти'), get_kord('улица Мира 101 Тольятти'))
 print(a)
 '''
+"""
+print(get_kord('улица Мира 45 Тольятти'))
+print(get_kord('улица Мира 101 Тольятти'))
+"""
+#https://taxi-routeinfo.taxi.yandex.net/taxi_info?rll=49.40642505,53.50692375~49.43793949030338,53.50981405&clid=ak211029&apikey=uKjkuIZTANofMjJlnXGJqILlQxTbZgDmXVScpH
+
+#print(requests.get('https://taxi-routeinfo.taxi.yandex.net/taxi_info?rll=49.40642505,53.50692375~49.43793949030338,53.50981405&clid=ak211029&apikey=uKjkuIZTANofMjJlnXGJqILlQxTbZgDmXVScpH').text)
