@@ -1,11 +1,10 @@
 import requests
 from geopy.geocoders import Nominatim
- 
-def get_geo():
-    otkuda = 'Голосова 83 Тольятти'
-    kuda = 'Мира 101 Тольятти'
-    return otkuda, kuda
-def get_price(otkuda, kuda):
+import json
+import ast
+
+
+def get_prices(otkuda, kuda):
     headers = {
         'authority': 'widget.city-mobil.ru',
         'sec-ch-ua': '"Chromium";v="94", "Yandex";v="21", ";Not A Brand";v="99"',
@@ -23,10 +22,11 @@ def get_price(otkuda, kuda):
     }
  
     data = '{"method":"getprice","ver":"4.59.0","phone_os":"widget","os_version":"web mobile-web","locale":"ru","latitude":' + str(otkuda[0]) + ',"longitude":'+ str(otkuda[1])+ ',"del_latitude":'+ str(kuda[0])+ ',"del_longitude":'+ str(kuda[1])+ ',"options":[],"payment_type":["cash"],"tariff_group":[2,4,13,7,5],"source":"O","hurry":1}'
-    print(data)
-    response = requests.post('https://widget.city-mobil.ru/c-api', headers=headers, data=data)
-    
-    return response.text
+
+    response = requests.post('https://widget.city-mobil.ru/c-api', headers=headers, data=data).text
+    response_dict = json.loads(response)
+
+    return response_dict["prices"][0]["price"], response_dict["prices"][1]["price"]
 
  
 def get_kord(address):
@@ -35,7 +35,7 @@ def get_kord(address):
  
     return otkuda_loc.latitude, otkuda_loc.longitude
  
- 
 
-a = get_price(get_kord('Голосова 83 Тольятти'), get_kord('Мира 101 Тольятти'))
+
+a = get_prices(get_kord('Голосова 83 Тольятти'), get_kord('Мира 101 Тольятти'))
 print(a)

@@ -1,0 +1,119 @@
+{
+    "id_calculation": "c8e1899869cd979e7196f6be8d41bc7d",
+    "prices": [
+        {
+            "id_tariff": "2970",
+            "id_tariff_real": "2970",
+            "id_tariff_group": 2,
+            "pickup_price": 0,
+            "label": "<div class='form-group result-info'>\n    <div class='price-block'>\n        <div class='result'>\n            <ul class='clearfix'>\n                <li class='active'>\n                                            <div class='price-text fixed-price clearfix'>\n                            <div class='text'>\u0424\u0438\u043a\u0441<\/div>\n                            <strong class='price'>155<span class='humanist'>\u20bd<\/span><\/strong>\n                            <div class='info-result' style='top: 10px;'>\n                                <span>3 \u043a\u043c \u2248 \u0437\u0430 8 \u043c\u0438\u043d\u0443\u0442<\/span>\n                            <\/div>\n                        <\/div>\n                                                    <div class='cashback clearfix'>\n                                <div class='text'>\u041a\u0435\u0448\u0431\u044d\u043a<\/div>\n                                <strong class='price'>15<span class='humanist'>\u20bd<\/span><\/strong>\n                            <\/div>\n                                                            <\/li>\n            <\/ul>\n        <\/div>\n    <\/div>\n    <div class='coefficient'><\/div>\n<\/div>\n",
+            "short_label": "<div class='form-group result-info'>\n    <div class='price-block'>\n        <div class='result'>\n            <ul class='clearfix'>\n                <li class='active'>\n                                            <div class='price-text fixed-price clearfix'>\n                            <div class='text'>\u0424\u0438\u043a\u0441<\/div>\n                            <strong class='price'>155<span class='humanist'>\u20bd<\/span><\/strong>\n                            <div class='info-result' style='top: 10px;'>\n                                <span>3 \u043a\u043c \u2248 \u0437\u0430 8 \u043c\u0438\u043d\u0443\u0442<\/span>\n                            <\/div>\n                        <\/div>\n                                                    <div class='cashback clearfix'>\n                                <div class='text'>\u041a\u0435\u0448\u0431\u044d\u043a<\/div>\n                                <strong class='price'>15<span class='humanist'>\u20bd<\/span><\/strong>\n                            <\/div>\n                                                            <\/li>\n            <\/ul>\n        <\/div>\n    <\/div>\n    <div class='coefficient'><\/div>\n<\/div>\n",
+            "price": 155,
+            "tariff_info": {
+                "name": "\u042d\u043a\u043e\u043d\u043e\u043c",
+                "price": "<div class='form-group result-info'>\n    <div class='price-block'>\n        <div class='result'>\n            <ul class='clearfix'>\n                <li class='active'>\n                                            <div class='price-text fixed-price clearfix'>\n                            <div class='text'>\u0424\u0438\u043a\u0441<\/div>\n                            <strong class='price'>155<span class='humanist'>\u20bd<\/span><\/strong>\n                            <div class='info-result' style='top: 10px;'>\n                                <span>3 \u043a\u043c \u2248 \u0437\u0430 8 \u043c\u0438\u043d\u0443\u0442<\/span>\n                            <\/div>\n                        <\/div>\n                                                    <div class='cashback clearfix'>\n                                <div class='text'>\u041a\u0435\u0448\u0431\u044d\u043a<\/div>\n                                <strong class='price'>15<span class='humanist'>\u20bd<\/span><\/strong>\n                            <\/div>\n                                                            <\/li>\n            <\/ul>\n        <\/div>\n    <\/div>\n    <div class='coefficient'><\/div>\n<\/div>\n",
+                "car_models": "Datsun ON-DO, Lada Granta, Renault Logan",
+                "car_capacity": "\u041f\u0430\u0441\u0441\u0430\u0436\u0438\u0440\u043e\u0432: 4, \u043c\u0435\u0441\u0442 \u0431\u0430\u0433\u0430\u0436\u0430: 2",
+                "link": "https:\/\/city-mobil.ru\/view\/tariffs\/2\/ru?id_tariff=2970"
+            },
+            "coefficient": 2.28,
+            "show_coefficient_lightning": true,
+            "is_options_valid": true,
+            "is_time_valid": true,
+            "is_price_available": true,
+            "price_modificators": [
+                {
+                    "type": "coefficient",
+                    "title": "\u0412\u044b\u0441\u043e\u043a\u0438\u0439 \u0441\u043f\u0440\u043e\u0441",
+                    "subtitle": "\u0422\u0430\u0440\u0438\u0444 \u0432\u0440\u0435\u043c\u0435\u043d\u043d\u043e \u0443\u0432\u0435\u043b\u0438\u0447\u0435\u043d"
+                }
+            ],
+            "coupons": [],
+            "has_cars": 1,
+            "supply": {
+                "status": "normal"
+            },
+            "eta": null,
+            "free_cancel_minutes": null
+        },
+        {
+            "id_tariff": "2974",
+            "id_tariff_real": "2974",
+            "id_tariff_group": 4,
+            "pickup_price": 0,
+            "label": "<div class='form-group result-info'>\n    <div class='price-block'>\n        <div class='result'>\n            <ul class='clearfix'>\n                <li class='active'>\n                                            <div class='price-text fixed-price clearfix'>\n                            <div class='text'>\u0424\u0438\u043a\u0441<\/div>\n                            <strong class='price'>170<span class='humanist'>\u20bd<\/span><\/strong>\n                            <div class='info-result' style='top: 10px;'>\n                                <span>3 \u043a\u043c \u2248 \u0437\u0430 8 \u043c\u0438\u043d\u0443\u0442<\/span>\n                            <\/div>\n                        <\/div>\n                                                    <div class='cashback clearfix'>\n                                <div class='text'>\u041a\u0435\u0448\u0431\u044d\u043a<\/div>\n                                <strong class='price'>17<span class='humanist'>\u20bd<\/span><\/strong>\n                            <\/div>\n                                                            <\/li>\n            <\/ul>\n        <\/div>\n    <\/div>\n    <div class='coefficient'><\/div>\n<\/div>\n",
+            "short_label": "<div class='form-group result-info'>\n    <div class='price-block'>\n        <div class='result'>\n            <ul class='clearfix'>\n                <li class='active'>\n                                            <div class='price-text fixed-price clearfix'>\n                            <div class='text'>\u0424\u0438\u043a\u0441<\/div>\n                            <strong class='price'>170<span class='humanist'>\u20bd<\/span><\/strong>\n                            <div class='info-result' style='top: 10px;'>\n                                <span>3 \u043a\u043c \u2248 \u0437\u0430 8 \u043c\u0438\u043d\u0443\u0442<\/span>\n                            <\/div>\n                        <\/div>\n                                                    <div class='cashback clearfix'>\n                                <div class='text'>\u041a\u0435\u0448\u0431\u044d\u043a<\/div>\n                                <strong class='price'>17<span class='humanist'>\u20bd<\/span><\/strong>\n                            <\/div>\n                                                            <\/li>\n            <\/ul>\n        <\/div>\n    <\/div>\n    <div class='coefficient'><\/div>\n<\/div>\n",
+            "price": 170,
+            "tariff_info": {
+                "name": "\u041a\u043e\u043c\u0444\u043e\u0440\u0442",
+                "price": "<div class='form-group result-info'>\n    <div class='price-block'>\n        <div class='result'>\n            <ul class='clearfix'>\n                <li class='active'>\n                                            <div class='price-text fixed-price clearfix'>\n                            <div class='text'>\u0424\u0438\u043a\u0441<\/div>\n                            <strong class='price'>170<span class='humanist'>\u20bd<\/span><\/strong>\n                            <div class='info-result' style='top: 10px;'>\n                                <span>3 \u043a\u043c \u2248 \u0437\u0430 8 \u043c\u0438\u043d\u0443\u0442<\/span>\n                            <\/div>\n                        <\/div>\n                                                    <div class='cashback clearfix'>\n                                <div class='text'>\u041a\u0435\u0448\u0431\u044d\u043a<\/div>\n                                <strong class='price'>17<span class='humanist'>\u20bd<\/span><\/strong>\n                            <\/div>\n                                                            <\/li>\n            <\/ul>\n        <\/div>\n    <\/div>\n    <div class='coefficient'><\/div>\n<\/div>\n",
+                "car_models": "Hyundai Solaris, Skoda Rapid, Kia Rio",
+                "car_capacity": "\u041f\u0430\u0441\u0441\u0430\u0436\u0438\u0440\u043e\u0432: 4, \u043c\u0435\u0441\u0442 \u0431\u0430\u0433\u0430\u0436\u0430: 2",
+                "link": "https:\/\/city-mobil.ru\/view\/tariffs\/2\/ru?id_tariff=2974"
+            },
+            "coefficient": 2.05,
+            "show_coefficient_lightning": true,
+            "is_options_valid": true,
+            "is_time_valid": true,
+            "is_price_available": true,
+            "price_modificators": [
+                {
+                    "type": "coefficient",
+                    "title": "\u0412\u044b\u0441\u043e\u043a\u0438\u0439 \u0441\u043f\u0440\u043e\u0441",
+                    "subtitle": "\u0422\u0430\u0440\u0438\u0444 \u0432\u0440\u0435\u043c\u0435\u043d\u043d\u043e \u0443\u0432\u0435\u043b\u0438\u0447\u0435\u043d"
+                }
+            ],
+            "coupons": [],
+            "has_cars": 1,
+            "supply": {
+                "status": "normal"
+            },
+            "eta": null,
+            "free_cancel_minutes": null
+        }
+    ],
+    "peta_surge_ab_test": "control",
+    "price_drop": [],
+    "duration_text": "8 \u043c\u0438\u043d",
+    "distance_text": "3 \u043a\u043c",
+    "route": {
+        "distance": 2311,
+        "duration": 460,
+        "points": "mpqeIktplHBbA_AX??i@qJKuBaBwXwAuXg@uIIcBy@{NmCyd@Am@eA_R??{AaXi@uI??t@?fA]??[}Fh@mB",
+        "encoded_points": "mpqeIktplHBbA_AX??i@qJKuBaBwXwAuXg@uIIcBy@{NmCyd@Am@eA_R??{AaXi@uI??t@?fA]??[}Fh@mB",
+        "duration_in_traffic": 460,
+        "duration_without_traffic": 403,
+        "steps": [
+            {
+                "encoded_points": "mpqeIktplHBbA_AX",
+                "points_count": 3,
+                "traffic_level": "unknown"
+            },
+            {
+                "encoded_points": "irqeImqplHi@qJKuBaBwXwAuXg@uIIcBy@{NmCyd@Am@eA_R",
+                "points_count": 11,
+                "traffic_level": "unknown"
+            },
+            {
+                "encoded_points": "{creIalulH{AaXi@uI",
+                "points_count": 3,
+                "traffic_level": "unknown"
+            },
+            {
+                "encoded_points": "ahreIyovlHt@?fA]",
+                "points_count": 3,
+                "traffic_level": "unknown"
+            },
+            {
+                "encoded_points": "cdreIwpvlH[}Fh@mB",
+                "points_count": 3,
+                "traffic_level": "unknown"
+            }
+        ]
+    },
+    "duration": 7.7,
+    "distance": 2.3,
+    "toasts": [],
+    "expires_at": 1637328340,
+    "token_gateway_id": 1
+}
