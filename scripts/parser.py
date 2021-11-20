@@ -44,21 +44,24 @@ def get_prices_citymobil(otkuda, kuda):
 
     return response_dict["prices"][0]["price"]
 
-def get_prices_yandex(otkuda, kuda):
+def get_yandex(otkuda, kuda):
     otkuda = get_kord(otkuda)[::-1]
     kuda = get_kord(kuda)[::-1]
 
     response = requests.get(f'https://taxi-routeinfo.taxi.yandex.net/taxi_info?rll={otkuda[0]},{otkuda[1]}~{kuda[0]},{kuda[1]}&clid={CLID}&apikey={APIKEY}').text
     response_dict = json.loads(response)
+    return response_dict
 
+
+def get_prices_yandex(response_dict):
     return response_dict["options"][0]["price"]
 
 def get_all_prices(otkuda, kuda):
-    yandex = "Яндекс такси - " + str(get_prices_yandex(otkuda, kuda)) + " руб."
+    yandex = "Яндекс такси - " + str(get_prices_yandex(get_yandex(otkuda, kuda))) + " руб."
     citymobil = "Ситимобил - " + str(get_prices_citymobil(otkuda, kuda)) + " руб."
     return yandex, citymobil
 
-
+print(get_yandex("улица мира 101 тольятти", "улица голосова 83 тольятти"))
 
 
 '''
